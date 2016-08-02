@@ -21,9 +21,9 @@ public class Chapter02 {
         Jedis conn = new Jedis(REDIS_HOST, REDIS_PORT);
         conn.select(15);
 
-//        testLoginCookies(conn);
-//        testShopppingCartCookies(conn);
-//        testCacheRows(conn);
+        testLoginCookies(conn);
+        testShopppingCartCookies(conn);
+        testCacheRows(conn);
         testCacheRequest(conn);
     }
 
