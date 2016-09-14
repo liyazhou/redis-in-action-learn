@@ -13,12 +13,15 @@ public class Chapter04 {
         new Chapter04().run();
     }
 
+    private static final String REDIS_HOST = "123.57.47.90";
+    private static final int REDIS_PORT = 6379;
     public void run() {
-        Jedis conn = new Jedis("localhost");
+//        Jedis conn = new Jedis("localhost");
+        Jedis conn = new Jedis(REDIS_HOST, REDIS_PORT);
         conn.select(15);
 
-        testListItem(conn, false);
-        testPurchaseItem(conn);
+//        testListItem(conn, false);
+//        testPurchaseItem(conn);
         testBenchmarkUpdateToken(conn);
     }
 
