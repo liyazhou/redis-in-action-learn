@@ -24,6 +24,8 @@ public class Chapter05 {
     private static final SimpleDateFormat ISO_FORMAT =
             new SimpleDateFormat("yyyy-MM-dd'T'HH:00:00");
 
+    private static final String REDIS_HOST = "123.57.47.90";
+    private static final int REDIS_PORT = 6379;
     static {
         ISO_FORMAT.setTimeZone(TimeZone.getTimeZone("UTC"));
     }
@@ -35,17 +37,19 @@ public class Chapter05 {
 
     public void run()
             throws InterruptedException {
-        Jedis conn = new Jedis("localhost");
+//        Jedis conn = new Jedis("localhost");
+//        conn.select(15);
+        Jedis conn = new Jedis(REDIS_HOST, REDIS_PORT);
         conn.select(15);
 
-        testLogRecent(conn);
-        testLogCommon(conn);
+//        testLogRecent(conn);
+//        testLogCommon(conn);
         testCounters(conn);
-        testStats(conn);
-        testAccessTime(conn);
-        testIpLookup(conn);
-        testIsUnderMaintenance(conn);
-        testConfig(conn);
+//        testStats(conn);
+//        testAccessTime(conn);
+//        testIpLookup(conn);
+//        testIsUnderMaintenance(conn);
+//        testConfig(conn);
     }
 
     public void testLogRecent(Jedis conn) {
