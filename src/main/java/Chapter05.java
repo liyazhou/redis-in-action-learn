@@ -44,8 +44,8 @@ public class Chapter05 {
 
 //        testLogRecent(conn);
 //        testLogCommon(conn);
-        testCounters(conn);
-//        testStats(conn);
+//        testCounters(conn);
+        testStats(conn);
 //        testAccessTime(conn);
 //        testIpLookup(conn);
 //        testIsUnderMaintenance(conn);
@@ -540,7 +540,8 @@ public class Chapter05 {
         private long timeOffset; // used to mimic a time in the future.
 
         public CleanCountersThread(int sampleCount, long timeOffset) {
-            this.conn = new Jedis("localhost");
+//            this.conn = new Jedis("localhost");
+            this.conn = new Jedis(REDIS_HOST, REDIS_PORT);
             this.conn.select(15);
             this.sampleCount = sampleCount;
             this.timeOffset = timeOffset;
